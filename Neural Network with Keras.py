@@ -4,9 +4,10 @@
 ###############################
 import numpy as np
 import mnist
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.utils import to_categorical
+from tensorflow import keras
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.utils import to_categorical
 
 train_images = mnist.train_images()
 train_labels = mnist.train_labels()
