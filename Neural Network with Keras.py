@@ -41,7 +41,7 @@ model.fit(
   train_images,
   to_categorical(train_labels),
   epochs=5,
-  batch_size=32,
+  batch_size=10,
 )
 
 # Evaluate the model.
@@ -51,10 +51,10 @@ model.evaluate(
 )
 
 # Save the model to disk.
-model.save_weights('model.h5')
+#model.save_weights('model.h5')
 
 # Load the model from disk later using:
-# model.load_weights('model.h5')
+model.load_weights('model.h5')
 
 # Predict on the first 5 test images.
 predictions = model.predict(test_images[:5])
