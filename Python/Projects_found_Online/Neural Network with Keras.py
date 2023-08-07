@@ -18,15 +18,18 @@ test_labels = mnist.test_labels()
 train_images = (train_images / 255) - 0.5
 test_images = (test_images / 255) - 0.5
 
+
 # Flatten the images.
 train_images = train_images.reshape((-1, 784))
 test_images = test_images.reshape((-1, 784))
 
 # Build the model.
 model = Sequential([
-  Dense(64, activation='relu', input_shape=(784,)),
-  Dense(64, activation='relu'),
+  Dense(256, activation='relu', input_shape=(784,)),
+  Dense(128, activation='relu', input_shape=(784,)),
   Dense(10, activation='softmax'),
+  #Line below helps with overfitting AKA regualrization Rate
+  keras.layers.Dropout(rate =0.2)
 ])
 
 # Compile the model.
